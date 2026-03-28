@@ -1,0 +1,12 @@
+# Core ML
+torch>=2.1.0
+numpy>=1.24.0
+
+# Default embedding backend (local, free)
+sentence-transformers>=2.7.0
+
+# Optional: OpenAI embedding backend
+# openai>=1.0.0
+
+# Utilities
+tqdm>=4.66.0

@@ -1,0 +1,222 @@
+[
+  {
+    "purpose": "일본어 실력 향상",
+    "action": "일본어 교재를 구매해서 매일 1시간 학습",
+    "label": 1.0
+  },
+  {
+    "purpose": "일본어 실력 향상",
+    "action": "자막 없이 일본 애니메이션 시청",
+    "label": 0.75
+  },
+  {
+    "purpose": "일본어 실력 향상",
+    "action": "한국어 자막으로 일본 애니메이션 시청",
+    "label": 0.35
+  },
+  {
+    "purpose": "일본어 실력 향상",
+    "action": "일본어 자막으로 일본 애니메이션 시청",
+    "label": 0.65
+  },
+  {
+    "purpose": "일본어 실력 향상",
+    "action": "유튜브에서 한국 예능 시청",
+    "label": 0.0
+  },
+  {
+    "purpose": "일본어 실력 향상",
+    "action": "일본 원서 소설 읽기",
+    "label": 0.9
+  },
+  {
+    "purpose": "일본어 실력 향상",
+    "action": "일본인 언어 교환 파트너와 화상 통화",
+    "label": 0.95
+  },
+  {
+    "purpose": "체중 감량",
+    "action": "매일 30분 유산소 운동",
+    "label": 0.9
+  },
+  {
+    "purpose": "체중 감량",
+    "action": "고탄수화물 음식 섭취 줄이기",
+    "label": 0.85
+  },
+  {
+    "purpose": "체중 감량",
+    "action": "하루 만 보 걷기",
+    "label": 0.75
+  },
+  {
+    "purpose": "체중 감량",
+    "action": "유튜브로 운동 영상 시청",
+    "label": 0.15
+  },
+  {
+    "purpose": "체중 감량",
+    "action": "야식으로 치킨 주문",
+    "label": 0.0
+  },
+  {
+    "purpose": "체중 감량",
+    "action": "체중과 식사 내용 일기 기록",
+    "label": 0.5
+  },
+  {
+    "purpose": "체중 감량",
+    "action": "헬스장 등록 후 주 3회 웨이트 트레이닝",
+    "label": 0.85
+  },
+  {
+    "purpose": "독서 습관 형성",
+    "action": "매일 자기 전 30분 독서",
+    "label": 1.0
+  },
+  {
+    "purpose": "독서 습관 형성",
+    "action": "도서관 정기 방문",
+    "label": 0.7
+  },
+  {
+    "purpose": "독서 습관 형성",
+    "action": "SNS 사용 시간 줄이기",
+    "label": 0.4
+  },
+  {
+    "purpose": "독서 습관 형성",
+    "action": "Netflix 드라마 정주행",
+    "label": 0.0
+  },
+  {
+    "purpose": "독서 습관 형성",
+    "action": "읽고 싶은 책 목록 작성",
+    "label": 0.45
+  },
+  {
+    "purpose": "독서 습관 형성",
+    "action": "북클럽 가입 후 매주 모임 참석",
+    "label": 0.8
+  },
+  {
+    "purpose": "Python 프로그래밍 실력 향상",
+    "action": "Leetcode 알고리즘 문제 매일 풀기",
+    "label": 0.8
+  },
+  {
+    "purpose": "Python 프로그래밍 실력 향상",
+    "action": "Python 공식 문서 정독",
+    "label": 0.9
+  },
+  {
+    "purpose": "Python 프로그래밍 실력 향상",
+    "action": "개인 프로젝트 개발",
+    "label": 0.85
+  },
+  {
+    "purpose": "Python 프로그래밍 실력 향상",
+    "action": "Java로 업무 자동화 스크립트 작성",
+    "label": 0.2
+  },
+  {
+    "purpose": "Python 프로그래밍 실력 향상",
+    "action": "유튜브 Python 강의 시청",
+    "label": 0.65
+  },
+  {
+    "purpose": "Python 프로그래밍 실력 향상",
+    "action": "Stack Overflow에서 Python 질문에 답변 달기",
+    "label": 0.75
+  },
+  {
+    "purpose": "저축 목표 달성",
+    "action": "월급의 30%를 자동 이체로 저축",
+    "label": 1.0
+  },
+  {
+    "purpose": "저축 목표 달성",
+    "action": "가계부 앱으로 지출 추적",
+    "label": 0.7
+  },
+  {
+    "purpose": "저축 목표 달성",
+    "action": "불필요한 구독 서비스 해지",
+    "label": 0.65
+  },
+  {
+    "purpose": "저축 목표 달성",
+    "action": "쇼핑몰 앱 자주 들어가기",
+    "label": 0.0
+  },
+  {
+    "purpose": "저축 목표 달성",
+    "action": "재테크 관련 책 읽기",
+    "label": 0.4
+  },
+  {
+    "purpose": "저축 목표 달성",
+    "action": "충동구매 전 24시간 대기 규칙 실천",
+    "label": 0.75
+  },
+  {
+    "purpose": "스트레스 해소",
+    "action": "명상 앱으로 매일 10분 명상",
+    "label": 0.85
+  },
+  {
+    "purpose": "스트레스 해소",
+    "action": "친구들과 카페에서 수다 떨기",
+    "label": 0.7
+  },
+  {
+    "purpose": "스트레스 해소",
+    "action": "좋아하는 음악 들으며 산책",
+    "label": 0.8
+  },
+  {
+    "purpose": "스트레스 해소",
+    "action": "업무 마감 직전에 야근",
+    "label": 0.0
+  },
+  {
+    "purpose": "스트레스 해소",
+    "action": "취미로 그림 그리기",
+    "label": 0.75
+  },
+  {
+    "purpose": "스트레스 해소",
+    "action": "걱정되는 일 목록을 적고 해결책 정리",
+    "label": 0.5
+  },
+  {
+    "purpose": "영어 회화 능력 향상",
+    "action": "원어민과 화상 영어 수업 수강",
+    "label": 1.0
+  },
+  {
+    "purpose": "영어 회화 능력 향상",
+    "action": "자막 없이 영어 드라마 시청",
+    "label": 0.7
+  },
+  {
+    "purpose": "영어 회화 능력 향상",
+    "action": "영어 단어 앱으로 단어 암기",
+    "label": 0.55
+  },
+  {
+    "purpose": "영어 회화 능력 향상",
+    "action": "한국어로 번역된 해외 소설 읽기",
+    "label": 0.05
+  },
+  {
+    "purpose": "영어 회화 능력 향상",
+    "action": "영어 일기 쓰기",
+    "label": 0.75
+  },
+  {
+    "purpose": "영어 회화 능력 향상",
+    "action": "영어 팟캐스트 청취",
+    "label": 0.65
+  }
+]
