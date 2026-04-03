@@ -70,49 +70,52 @@ def build_embedding_backend(
 # ──────────────────────────────────────────────
 # 2.  Neural Relevance Network
 # ──────────────────────────────────────────────
-
 class CrossAttentionFusion(nn.Module):
     """
-    Lightweight cross-attention between two token-less vectors.
-
-    We treat each embedding as a single 'token' and apply
-    multi-head cross-attention in both directions so the network can
-    learn which dimensions of purpose are relevant to which dimensions
-    of action – much richer than simple concatenation.
+    Cross-attention between two token-less vectors with separated projections.
+ 
+    p→a and a→p directions each have their own Q/K/V projections and
+    MultiheadAttention, allowing each direction to learn independently.
     """
-
+ 
     def __init__(self, dim: int, num_heads: int = 4, dropout: float = 0.1):
         super().__init__()
-        self.q_proj = nn.Linear(dim, dim)
-        self.k_proj = nn.Linear(dim, dim)
-        self.v_proj = nn.Linear(dim, dim)
-        self.attn = nn.MultiheadAttention(dim, num_heads, dropout=dropout, batch_first=True)
+ 
+        # purpose → action 전용 projection & attention
+        self.p_q_proj = nn.Linear(dim, dim)
+        self.p_k_proj = nn.Linear(dim, dim)
+        self.p_v_proj = nn.Linear(dim, dim)
+        self.p_to_a_attn = nn.MultiheadAttention(dim, num_heads, dropout=dropout, batch_first=True)
         self.norm1 = nn.LayerNorm(dim)
+ 
+        # action → purpose 전용 projection & attention
+        self.a_q_proj = nn.Linear(dim, dim)
+        self.a_k_proj = nn.Linear(dim, dim)
+        self.a_v_proj = nn.Linear(dim, dim)
+        self.a_to_p_attn = nn.MultiheadAttention(dim, num_heads, dropout=dropout, batch_first=True)
         self.norm2 = nn.LayerNorm(dim)
-
+ 
     def forward(self, purpose: torch.Tensor, action: torch.Tensor) -> torch.Tensor:
         """
         purpose, action: (B, dim)
         Returns fused vector: (B, 2*dim)
         """
-        # Unsqueeze to (B, 1, dim) for attention API
-        p = purpose.unsqueeze(1)
-        a = action.unsqueeze(1)
-
-        # purpose attends to action
-        p_out, _ = self.attn(
-            self.q_proj(p), self.k_proj(a), self.v_proj(a)
+        p = purpose.unsqueeze(1)  # (B, 1, dim)
+        a = action.unsqueeze(1)   # (B, 1, dim)
+ 
+        # purpose attends to action (p→a 전용 projection 사용)
+        p_out, _ = self.p_to_a_attn(
+            self.p_q_proj(p), self.p_k_proj(a), self.p_v_proj(a)
         )
         p_fused = self.norm1(p + p_out).squeeze(1)
-
-        # action attends to purpose
-        a_out, _ = self.attn(
-            self.q_proj(a), self.k_proj(p), self.v_proj(p)
+ 
+        # action attends to purpose (a→p 전용 projection 사용)
+        a_out, _ = self.a_to_p_attn(
+            self.a_q_proj(a), self.a_k_proj(p), self.a_v_proj(p)
         )
         a_fused = self.norm2(a + a_out).squeeze(1)
-
-        return torch.cat([p_fused, a_fused], dim=-1)   # (B, 2*dim)
-
+ 
+        return torch.cat([p_fused, a_fused], dim=-1)  # (B, 2*dim)
 
 class RelevanceHead(nn.Module):
     """MLP that maps fused vector → scalar relevance ∈ (0, 1)."""
